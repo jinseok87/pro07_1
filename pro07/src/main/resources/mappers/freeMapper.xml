@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC 
+"-//mybatis.org//DTD Mapper 3.0//EN" 
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="free">
+	<!-- 자유게시판 목록 -->
+	<select id="freeList" resultType="kr.go.pss.dto.FreeDTO">
+		select * from free
+	</select>
+	
+	<!-- 자유게시판 상세보기 -->
+	<select id="freeDetail" resultType="kr.go.pss.dto.FreeDTO">
+		select * from free where no=#{no}
+	</select>
+	
+	<!-- 자유게시판 수정하기 -->
+	<update id="freeUpdate">
+		update free set title=#{title}, content=#{content} where no=#{no}
+	</update>
+	
+	<!-- 자유게시판 글 쓰기 -->
+	<insert id="freeInsert">
+		insert into free(title,content,id) values (#{title},#{content},#{id})
+	</insert>
+	
+	<!-- 조회수 증가 -->
+	<update id="visitedUp">
+		update free set visited=visited+1 where no=#{no}
+	</update>
+	
+	<!-- 자유게시글 삭제 -->
+	<delete id="freeDelete">
+		delete from free where no=#{no}
+	</delete>
+</mapper>
