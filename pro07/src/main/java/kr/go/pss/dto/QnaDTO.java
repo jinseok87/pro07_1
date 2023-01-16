@@ -7,7 +7,7 @@ public class QnaDTO {
 	private int no;
 	private String title;
 	private String content;
-	private String author;
+	private String writer;
 	private String regdate;
 	private int lev;
 	private int parno;

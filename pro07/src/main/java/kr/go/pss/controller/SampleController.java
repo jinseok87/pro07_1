@@ -23,5 +23,4 @@ public class SampleController {
 		model.addAttribute("sampleList",sampleLst);
 		return "sample/list";
 	}
-	
 }
